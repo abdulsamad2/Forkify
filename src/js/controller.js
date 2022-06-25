@@ -18,23 +18,11 @@ const timeout = function (s) {
     }, s * 1000);
   });
 };
-const renderSpinner = function (parentEl) {
-  const markup = `
 
-       <div class="spinner">
-          <svg>
-            <use href="${icons}#icon-loader"></use>
-          </svg>
-        </div> 
-
-      `;
-  parentEl.innerHTML = '';
-  parentEl.insertAdjacentHTML('afterbegin', markup);
-};
 // https://forkify-api.herokuapp.com/v2
 
 ///////////////////////////////////////
-const showRecipe = async function () {
+const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
 
@@ -42,24 +30,23 @@ const showRecipe = async function () {
     if (!id) return;
     /// loading spinner
 
-    renderSpinner(recipeContainer);
+    recipeView.renderSpinner();
     /////////////// loading recipie //////////////////
     await model.loadRecipe(id);
-    const { recipe } = model.state;
     //// const renderSpinner
 
     ///////////rendring recipe ////////////////////////////////////
 
     recipeView.render(model.state.recipe);
-    const recipeView = new recipeView(model.state.recipe);
+    // const recipeView = new recipeView(model.state.recipe);
   } catch (err) {
     alert(err);
   }
 };
 
-showRecipe();
+controlRecipes();
 
-// ['haschnage', 'load'].forEach(e => window.addEventListener(e, showRecipe));
+// ['haschnage', 'load'].forEach(e => window.addEventListener(e, controlRecipes));
 
-// window.addEventListener('hashchange', showRecipe);
-// window.addEventListener('load', showRecipe);
+window.addEventListener('hashchange', controlRecipes);
+window.addEventListener('load', controlRecipes);
