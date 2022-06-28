@@ -566,13 +566,15 @@ const controlRecipes = async function() {
         (0, _recipeViewJsDefault.default).render(_modelJs.state.recipe);
     // const recipeView = new recipeView(model.state.recipe);
     } catch (err) {
-        alert(err);
+        (0, _recipeViewJsDefault.default).renderError();
     }
 };
 controlRecipes();
 // ['haschnage', 'load'].forEach(e => window.addEventListener(e, controlRecipes));
-window.addEventListener("hashchange", controlRecipes);
-window.addEventListener("load", controlRecipes);
+const init = function() {
+    (0, _recipeViewJsDefault.default).addHandlerRender(controlRecipes);
+};
+init();
 
 },{"core-js/modules/es.array.includes.js":"dkJzX","core-js/modules/web.immediate.js":"49tUX","url:../img/icons.svg":"loVOp","regenerator-runtime/runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./model.js":"Y4A21","./views/recipeView.js":"l60JC"}],"dkJzX":[function(require,module,exports) {
 "use strict";
@@ -2520,6 +2522,7 @@ console.log((0, _fractional.Fraction));
 class RecipeView {
     #parentElement = document.querySelector(".recipe");
     #data;
+    #errorMessage = "we could not find that recipe plz try another one!";
     render(data) {
         this.#data = data;
         const markup = this.#generateMarkup();
@@ -2539,8 +2542,26 @@ class RecipeView {
         </div> 
 
       `;
-        this.#parentElement.innerHTML = "";
+        this.#clear();
         this.#parentElement.insertAdjacentHTML("afterbegin", markup);
+    }
+    renderError(message = this.#errorMessage) {
+        const markup = `  <div class="error">
+            <div>
+              <svg>
+                <use href="${(0, _iconsSvgDefault.default)}#icon-alert-triangle"></use>
+              </svg>
+            </div>
+            <p>${message}</p>
+          </div> -->
+
+        `;
+        this.#clear();
+        this.#parentElement.insertAdjacentHTML("afterbegin", markup);
+    }
+    addHandlerRender(handler) {
+        window.addEventListener("hashchange", handler);
+        window.addEventListener("load", handler);
     }
      #generateMarkup() {
         return `

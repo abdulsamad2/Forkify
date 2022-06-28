@@ -40,7 +40,7 @@ const controlRecipes = async function () {
     recipeView.render(model.state.recipe);
     // const recipeView = new recipeView(model.state.recipe);
   } catch (err) {
-    alert(err);
+    recipeView.renderError();
   }
 };
 
@@ -48,5 +48,7 @@ controlRecipes();
 
 // ['haschnage', 'load'].forEach(e => window.addEventListener(e, controlRecipes));
 
-window.addEventListener('hashchange', controlRecipes);
-window.addEventListener('load', controlRecipes);
+const init = function () {
+  recipeView.addHandlerRender(controlRecipes);
+};
+init();
