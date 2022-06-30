@@ -1,6 +1,7 @@
 import * as model from './model.js';
 import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
+import resultView from './views/resultView.js';
 
 /// importing icons from
 
@@ -49,6 +50,7 @@ controlRecipes();
 
 const controlSearchResults = async function () {
   try {
+    resultView.renderSpinner();
     // get search query
     const query = searchView.getQuery();
     if (!query) return;
