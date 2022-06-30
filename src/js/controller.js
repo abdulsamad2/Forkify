@@ -1,7 +1,10 @@
 import * as model from './model.js';
 import recipeView from './views/recipeView.js';
+<<<<<<< HEAD
 import searchView from './views/searchView.js';
 import resultView from './views/resultView.js';
+=======
+>>>>>>> parent of 57ffd40 (update june 28)
 
 /// importing icons from
 
@@ -10,7 +13,8 @@ import icons from 'url:../img/icons.svg';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import recipeView from './views/recipeView.js';
-import { async } from 'regenerator-runtime';
+
+const recipeContainer = document.querySelector('.recipe');
 
 const timeout = function (s) {
   return new Promise(function (_, reject) {
@@ -27,6 +31,7 @@ const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
 
+    console.log(id);
     if (!id) return;
     /// loading spinner
 
@@ -48,6 +53,7 @@ controlRecipes();
 
 // ['haschnage', 'load'].forEach(e => window.addEventListener(e, controlRecipes));
 
+<<<<<<< HEAD
 const controlSearchResults = async function () {
   try {
     resultView.renderSpinner();
@@ -64,10 +70,9 @@ const controlSearchResults = async function () {
   }
 };
 
+=======
+>>>>>>> parent of 57ffd40 (update june 28)
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
-  searchView.addHandlerSearch(controlSearchResults);
 };
 init();
-
-controlSearchResults();

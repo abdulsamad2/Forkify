@@ -538,15 +538,18 @@ var _webImmediateJs = require("core-js/modules/web.immediate.js");
 var _modelJs = require("./model.js");
 var _recipeViewJs = require("./views/recipeView.js");
 var _recipeViewJsDefault = parcelHelpers.interopDefault(_recipeViewJs);
+<<<<<<< HEAD
 var _searchViewJs = require("./views/searchView.js");
 var _searchViewJsDefault = parcelHelpers.interopDefault(_searchViewJs);
 var _resultViewJs = require("./views/resultView.js");
 var _resultViewJsDefault = parcelHelpers.interopDefault(_resultViewJs);
+=======
+>>>>>>> parent of 57ffd40 (update june 28)
 /// importing icons from
 var _iconsSvg = require("url:../img/icons.svg");
 var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
 var _runtime = require("regenerator-runtime/runtime");
-var _regeneratorRuntime = require("regenerator-runtime");
+const recipeContainer = document.querySelector(".recipe");
 const timeout = function(s) {
     return new Promise(function(_, reject) {
         setTimeout(function() {
@@ -559,6 +562,7 @@ const timeout = function(s) {
 const controlRecipes = async function() {
     try {
         const id = window.location.hash.slice(1);
+        console.log(id);
         if (!id) return;
         /// loading spinner
         (0, _recipeViewJsDefault.default).renderSpinner();
@@ -574,6 +578,7 @@ const controlRecipes = async function() {
 };
 controlRecipes();
 // ['haschnage', 'load'].forEach(e => window.addEventListener(e, controlRecipes));
+<<<<<<< HEAD
 const controlSearchResults = async function() {
     try {
         (0, _resultViewJsDefault.default).renderSpinner();
@@ -588,18 +593,22 @@ const controlSearchResults = async function() {
         console.log(err);
     }
 };
+=======
+>>>>>>> parent of 57ffd40 (update june 28)
 const init = function() {
     (0, _recipeViewJsDefault.default).addHandlerRender(controlRecipes);
-    (0, _searchViewJsDefault.default).addHandlerSearch(controlSearchResults);
 };
 init();
-controlSearchResults();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 },{"core-js/modules/es.array.includes.js":"dkJzX","core-js/modules/web.immediate.js":"49tUX","url:../img/icons.svg":"loVOp","regenerator-runtime/runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./model.js":"Y4A21","./views/recipeView.js":"l60JC","./views/searchView.js":"9OQAM","regenerator-runtime":"dXNgZ","./views/resultView.js":"f70O5"}],"dkJzX":[function(require,module,exports) {
 =======
 },{"core-js/modules/es.array.includes.js":"dkJzX","core-js/modules/web.immediate.js":"49tUX","url:../img/icons.svg":"loVOp","regenerator-runtime/runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./model.js":"Y4A21","./views/recipeView.js":"l60JC","regenerator-runtime":"dXNgZ","./views/searchView.js":"9OQAM"}],"dkJzX":[function(require,module,exports) {
 >>>>>>> parent of 7e82fb5 (update)
+=======
+},{"core-js/modules/es.array.includes.js":"dkJzX","core-js/modules/web.immediate.js":"49tUX","url:../img/icons.svg":"loVOp","regenerator-runtime/runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./model.js":"Y4A21","./views/recipeView.js":"l60JC"}],"dkJzX":[function(require,module,exports) {
+>>>>>>> parent of 57ffd40 (update june 28)
 "use strict";
 var $ = require("../internals/export");
 var $includes = require("../internals/array-includes").includes;
@@ -2473,16 +2482,11 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "state", ()=>state);
 parcelHelpers.export(exports, "loadRecipe", ()=>loadRecipe);
-parcelHelpers.export(exports, "loadSearchResults", ()=>loadSearchResults);
 var _regeneratorRuntime = require("regenerator-runtime");
 var _config = require("./config");
 var _helpers = require("./helpers");
 const state = {
-    recipe: {},
-    search: {
-        query: "",
-        results: []
-    }
+    recipe: {}
 };
 const loadRecipe = async function(id) {
     try {
@@ -2500,22 +2504,6 @@ const loadRecipe = async function(id) {
             ingredients: recipe.ingredients
         };
         console.log(state.recipe);
-    } catch (err) {
-        throw err;
-    }
-};
-const loadSearchResults = async function(query) {
-    try {
-        state.search.query = query;
-        const data = await (0, _helpers.getJSON)(`${(0, _config.API_URL)}?search=${query}`);
-        state.search.results = data.data.recipes.map((rec)=>{
-            return {
-                id: rec.id,
-                title: rec.title,
-                publisher: rec.publisher,
-                image: rec.image_url
-            };
-        });
     } catch (err) {
         throw err;
     }
@@ -2571,7 +2559,6 @@ class RecipeView {
     #parentElement = document.querySelector(".recipe");
     #data;
     #errorMessage = "we could not find that recipe plz try another one!";
-    #message = "";
     render(data) {
         this.#data = data;
         const markup = this.#generateMarkup();
@@ -2602,21 +2589,7 @@ class RecipeView {
               </svg>
             </div>
             <p>${message}</p>
-          </div> 
-
-        `;
-        this.#clear();
-        this.#parentElement.insertAdjacentHTML("afterbegin", markup);
-    }
-    renderMessage(message = this.#message) {
-        const markup = `  <div class="message">
-            <div>
-              <svg>
-                <use href="${(0, _iconsSvgDefault.default)}#icon-smile"></use>
-              </svg>
-            </div>
-            <p>${message}</p>
-          </div> 
+          </div> -->
 
         `;
         this.#clear();
@@ -2974,6 +2947,7 @@ Fraction.primeFactors = function(n) {
 };
 module.exports.Fraction = Fraction;
 
+<<<<<<< HEAD
 },{}],"9OQAM":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -3011,5 +2985,8 @@ class View {
 exports.default = View;
 
 },{"url:../../img/icons.svg":"loVOp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["fA0o9","aenu9"], "aenu9", "parcelRequire3a11")
+=======
+},{}]},["fA0o9","aenu9"], "aenu9", "parcelRequire3a11")
+>>>>>>> parent of 57ffd40 (update june 28)
 
 //# sourceMappingURL=index.e37f48ea.js.map

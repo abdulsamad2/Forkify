@@ -1,11 +1,11 @@
 7633
-55/home/absamad/Documents/Forkify/dist/icons.dfd7a6db.svg1656069563944610359 0
-55/home/absamad/Documents/Forkify/dist/icons.21bad73c.svg1656069563964607129 0
-47/home/absamad/Documents/Forkify/dist/index.html1656069563944610359 0
-57/home/absamad/Documents/Forkify/dist/favicon.8b2f57bf.png1656069563848625861 0
-54/home/absamad/Documents/Forkify/dist/logo.726d37a8.png1656069563912615526 0
-54/home/absamad/Documents/Forkify/dist/index.e37f48ea.js1656574476202563245 0
-36/home/absamad/Documents/Forkify/dist1656574476202563245 1
+55/home/absamad/Documents/Forkify/dist/icons.dfd7a6db.svg1656575728701119583 0
+55/home/absamad/Documents/Forkify/dist/icons.21bad73c.svg1656575728745121005 0
+47/home/absamad/Documents/Forkify/dist/index.html1656575728705119713 0
+57/home/absamad/Documents/Forkify/dist/favicon.8b2f57bf.png1656575728729120488 0
+54/home/absamad/Documents/Forkify/dist/logo.726d37a8.png1656575728677118808 0
+54/home/absamad/Documents/Forkify/dist/index.e37f48ea.js1656576218417895103 0
+36/home/absamad/Documents/Forkify/dist1656576218417895103 1
 88/home/absamad/Documents/Forkify/node_modules/electron-to-chromium/chromium-versions.json1655541983556237958 0
 91/home/absamad/Documents/Forkify/node_modules/electron-to-chromium/full-chromium-versions.js1655541983092226972 0
 77/home/absamad/Documents/Forkify/node_modules/electron-to-chromium/versions.js1655541983520237105 0
@@ -1866,7 +1866,7 @@
 72/home/absamad/Documents/Forkify/node_modules/supports-color/package.json1655541982452211820 0
 98/home/absamad/Documents/Forkify/node_modules/abortcontroller-polyfill/dist/polyfill-patch-fetch.js1655541983388233980 0
 83/home/absamad/Documents/Forkify/node_modules/core-js/stable/instance/copy-within.js1655670094647767569 0
-52/home/absamad/Documents/Forkify/src/js/views/View.js1656574519376178966 0
+52/home/absamad/Documents/Forkify/src/js/views/View.js1656575777694700452 0
 74/home/absamad/Documents/Forkify/node_modules/abortcontroller-polyfill/dist1655541983496236537 1
 82/home/absamad/Documents/Forkify/node_modules/abortcontroller-polyfill/src/utils.js1655541983620239473 0
 85/home/absamad/Documents/Forkify/node_modules/core-js/modules/es.math.to-string-tag.js1655670094711769135 0
@@ -3484,7 +3484,7 @@
 65/home/absamad/Documents/Forkify/node_modules/path-type/index.d.ts1655541982256207180 0
 78/home/absamad/Documents/Forkify/node_modules/core-js/stable/string/includes.js1655670095015776574 0
 72/home/absamad/Documents/Forkify/node_modules/@parcel/logger/package.json1655544511371406759 0
-58/home/absamad/Documents/Forkify/src/js/views/searchView.js1656416061727582821 0
+58/home/absamad/Documents/Forkify/src/js/views/searchView.js1656575188407460148 0
 76/home/absamad/Documents/Forkify/node_modules/core-js/features/reflect/has.js1655670094999776182 0
 76/home/absamad/Documents/Forkify/node_modules/caniuse-lite/data/regions/TL.js1655541989852387057 0
 73/home/absamad/Documents/Forkify/node_modules/@parcel/transformer-json/lib1655544510595388275 1
@@ -3528,7 +3528,7 @@
 99/home/absamad/Documents/Forkify/node_modules/@parcel/runtime-browser-hmr/lib/loaders/hmr-runtime.js1655544510207379033 0
 87/home/absamad/Documents/Forkify/node_modules/@parcel/node-resolver-core/lib/builtins.js1655544512871442489 0
 106/home/absamad/Documents/Forkify/node_modules/@parcel/optimizer-image/parcel-image.linux-arm-gnueabihf.node1655544512899443156 0
-38/home/absamad/Documents/Forkify/src/js1656069701457623697 1
+38/home/absamad/Documents/Forkify/src/js1656576218385895189 1
 73/home/absamad/Documents/Forkify/node_modules/core-js/stable/math/asinh.js1655670094547765122 0
 92/home/absamad/Documents/Forkify/node_modules/caniuse-lite/data/features/namevalue-storage.js1655541989060368297 0
 80/home/absamad/Documents/Forkify/node_modules/core-js/features/instance/reduce.js1655670095251782348 0
@@ -4069,7 +4069,7 @@
 76/home/absamad/Documents/Forkify/node_modules/caniuse-lite/data/regions/UZ.js1655541989892388004 0
 92/home/absamad/Documents/Forkify/node_modules/@parcel/reporter-dev-server/src/serverErrors.js1655544509975373507 0
 84/home/absamad/Documents/Forkify/node_modules/core-js/es/typed-array/last-index-of.js1655670095143779706 0
-47/home/absamad/Documents/Forkify/src/js/model.js1656414463300431946 0
+47/home/absamad/Documents/Forkify/src/js/model.js1656576218377895211 0
 132/home/absamad/Documents/Forkify/node_modules/@parcel/node-resolver-core/test/fixture/node_modules/package-browser-alias/package.json1655544512999445538 0
 82/home/absamad/Documents/Forkify/node_modules/core-js/es/string/virtual/iterator.js1655670095111778923 0
 85/home/absamad/Documents/Forkify/node_modules/core-js/stable/function/virtual/index.js1655670095067777846 0
@@ -4579,7 +4579,7 @@
 82/home/absamad/Documents/Forkify/node_modules/core-js/es/object/get-prototype-of.js1655670094971775497 0
 63/home/absamad/Documents/Forkify/node_modules/core-js/stage/1.js1655670094511764241 0
 62/home/absamad/Documents/Forkify/node_modules/core-js/full/json1655670095459787438 1
-44/home/absamad/Documents/Forkify/src/js/views1656573037279391390 1
+44/home/absamad/Documents/Forkify/src/js/views1656576218385895189 1
 76/home/absamad/Documents/Forkify/node_modules/core-js/full/number/to-fixed.js1655670095415786361 0
 74/home/absamad/Documents/Forkify/node_modules/@parcel/namer-default/LICENSE1655544512291428673 0
 110/home/absamad/Documents/Forkify/node_modules/@swc/helpers/src/_class_check_private_static_field_descriptor.mjs1655544508423336540 0
@@ -4917,7 +4917,7 @@
 69/home/absamad/Documents/Forkify/node_modules/supports-color/readme.md1655541982552214188 0
 79/home/absamad/Documents/Forkify/node_modules/core-js/stable/typed-array/keys.js1655670095143779706 0
 76/home/absamad/Documents/Forkify/node_modules/caniuse-lite/data/regions/TT.js1655541989872387531 0
-58/home/absamad/Documents/Forkify/src/js/views/resultView.js1656574454201731760 0
+58/home/absamad/Documents/Forkify/src/js/views/resultView.js1656575756210007490 0
 96/home/absamad/Documents/Forkify/node_modules/@parcel/runtime-js/lib/helpers/browser/js-loader.js1655544509727367599 0
 64/home/absamad/Documents/Forkify/node_modules/core-js/actual/math1655670095491788221 1
 73/home/absamad/Documents/Forkify/node_modules/@parcel/transformer-json/src1655544510595388275 1
@@ -5663,7 +5663,7 @@
 82/home/absamad/Documents/Forkify/node_modules/core-js/features/iterator/to-array.js1655670095407786166 0
 88/home/absamad/Documents/Forkify/node_modules/caniuse-lite/data/features/console-basic.js1655541985292279062 0
 78/home/absamad/Documents/Forkify/node_modules/core-js/features/iterator/from.js1655670094947774910 0
-52/home/absamad/Documents/Forkify/src/js/controller.js1656574089342866339 0
+52/home/absamad/Documents/Forkify/src/js/controller.js1656576218385895189 0
 83/home/absamad/Documents/Forkify/node_modules/core-js/modules/es.string.trim-left.js1655670094747770016 0
 90/home/absamad/Documents/Forkify/node_modules/@parcel/core/test/ParcelConfigRequest.test.js1655544512063423242 0
 77/home/absamad/Documents/Forkify/node_modules/core-js/features/iterator/map.js1655670095167780293 0
@@ -5810,7 +5810,7 @@
 67/home/absamad/Documents/Forkify/node_modules/@parcel/events/LICENSE1655544511459408855 0
 81/home/absamad/Documents/Forkify/node_modules/core-js/actual/date/to-gmt-string.js1655670095415786361 0
 54/home/absamad/Documents/Forkify/node_modules/lmdb/dist1655544508135329680 1
-58/home/absamad/Documents/Forkify/src/js/views/recipeView.js1656573711260580618 0
+58/home/absamad/Documents/Forkify/src/js/views/recipeView.js1656576218385895189 0
 64/home/absamad/Documents/Forkify/node_modules/core-js/stable/json1655670095463787536 1
 76/home/absamad/Documents/Forkify/node_modules/core-js/actual/date/get-year.js1655670094971775497 0
 81/home/absamad/Documents/Forkify/node_modules/core-js/actual/date/to-iso-string.js1655670095419786459 0
@@ -6021,7 +6021,7 @@
 77/home/absamad/Documents/Forkify/node_modules/core-js/actual/symbol/species.js1655670095335784403 0
 82/home/absamad/Documents/Forkify/node_modules/core-js/actual/symbol/to-primitive.js1655670095443787047 0
 81/home/absamad/Documents/Forkify/node_modules/core-js/actual/symbol/unscopables.js1655670095507788612 0
-59/home/absamad/Documents/Forkify/dist/index.f7626f62.css.map1656069563900617464 0
+59/home/absamad/Documents/Forkify/dist/index.f7626f62.css.map1656575728661118292 0
 75/home/absamad/Documents/Forkify/node_modules/core-js/actual/symbol/index.js1655670095027776868 0
 75/home/absamad/Documents/Forkify/node_modules/core-js/features/math/isubh.js1655670095103778727 0
 65/home/absamad/Documents/Forkify/node_modules/core-js/actual/error1655670095463787536 1
@@ -6214,7 +6214,7 @@
 83/home/absamad/Documents/Forkify/node_modules/core-js/stable/array-buffer/is-view.js1655670095103778727 0
 87/home/absamad/Documents/Forkify/node_modules/core-js/stable/typed-array/reduce-right.js1655670095251782348 0
 80/home/absamad/Documents/Forkify/node_modules/core-js/stable/instance/flat-map.js1655670094907773932 0
-58/home/absamad/Documents/Forkify/dist/index.e37f48ea.js.map1656574476202563245 0
+58/home/absamad/Documents/Forkify/dist/index.e37f48ea.js.map1656576218409895125 0
 83/home/absamad/Documents/Forkify/node_modules/core-js/stable/typed-array/iterator.js1655670095123779216 0
 83/home/absamad/Documents/Forkify/node_modules/core-js/stable/typed-array/subarray.js1655670095395785872 0
 82/home/absamad/Documents/Forkify/node_modules/core-js/stable/typed-array/methods.js1655670095187780782 0
@@ -6509,7 +6509,7 @@
 81/home/absamad/Documents/Forkify/node_modules/core-js/stable/instance/match-all.js1655670095175780489 0
 79/home/absamad/Documents/Forkify/node_modules/core-js/stable/instance/entries.js1655670094691768646 0
 77/home/absamad/Documents/Forkify/node_modules/core-js/stable/instance/slice.js1655670095315783915 0
-55/home/absamad/Documents/Forkify/dist/index.f7626f62.css1656069563900617464 0
+55/home/absamad/Documents/Forkify/dist/index.f7626f62.css1656575728661118292 0
 87/home/absamad/Documents/Forkify/node_modules/core-js/stable/instance/find-last-index.js1655670094879773246 0
 76/home/absamad/Documents/Forkify/node_modules/core-js/stable/instance/find.js1655670094899773735 0
 77/home/absamad/Documents/Forkify/node_modules/core-js/es/instance/trim-left.js1655670095475787829 0
