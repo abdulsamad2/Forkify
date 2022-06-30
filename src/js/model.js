@@ -27,3 +27,5 @@ export const loadRecipe = async function (id) {
     throw err;
   }
 };
+
+export const loadSeachResult = async function (query) {};
