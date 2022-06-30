@@ -1,10 +1,7 @@
 import * as model from './model.js';
 import recipeView from './views/recipeView.js';
-<<<<<<< HEAD
 import searchView from './views/searchView.js';
 import resultView from './views/resultView.js';
-=======
->>>>>>> parent of 57ffd40 (update june 28)
 
 /// importing icons from
 
@@ -53,7 +50,6 @@ controlRecipes();
 
 // ['haschnage', 'load'].forEach(e => window.addEventListener(e, controlRecipes));
 
-<<<<<<< HEAD
 const controlSearchResults = async function () {
   try {
     resultView.renderSpinner();
@@ -70,8 +66,6 @@ const controlSearchResults = async function () {
   }
 };
 
-=======
->>>>>>> parent of 57ffd40 (update june 28)
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
 };
