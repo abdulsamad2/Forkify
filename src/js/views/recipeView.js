@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 //
 
+=======
+>>>>>>> parent of 7e82fb5 (update)
 import icons from 'url:../../img/icons.svg';
 import { Fraction } from 'fractional';
 
