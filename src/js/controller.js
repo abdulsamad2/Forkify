@@ -11,6 +11,10 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import recipeView from './views/recipeView.js';
 
+if (model.hot) {
+  model.hot.accept();
+}
+
 const recipeContainer = document.querySelector('.recipe');
 
 const timeout = function (s) {
@@ -52,15 +56,17 @@ controlRecipes();
 
 const controlSearchResults = async function () {
   try {
-    resultView.renderSpinner();
     // get search query
+    resultView.renderSpinner();
+
     const query = searchView.getQuery();
     if (!query) return;
 
     // load search
     await model.loadSearchResults(query);
     /// render results
-    console.log(model.state.search.results);
+
+    resultView.render(model.state.search.results);
   } catch (err) {
     console.log(err);
   }
@@ -68,5 +74,6 @@ const controlSearchResults = async function () {
 
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
+  searchView.addHandlerSearch(controlSearchResults);
 };
 init();
