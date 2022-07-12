@@ -588,16 +588,22 @@ const controlSearchResults = async function() {
         await _modelJs.loadSearchResults(query);
         /// render results
         // resultView.render(model.state.search.results);
-        (0, _resultViewJsDefault.default).render(_modelJs.getSearchResultspage(6));
+        (0, _resultViewJsDefault.default).render(_modelJs.getSearchResultspage(1));
         // pagination
         (0, _paginationViewJsDefault.default).render(_modelJs.state.search);
     } catch (err) {
         console.log(err);
     }
 };
+const controlPagination = function(gotoPage) {
+    (0, _resultViewJsDefault.default).render(_modelJs.getSearchResultspage(gotoPage));
+    // pagination
+    (0, _paginationViewJsDefault.default).render(_modelJs.state.search);
+};
 const init = function() {
     (0, _recipeViewJsDefault.default).addHandlerRender(controlRecipes);
     (0, _searchViewJsDefault.default).addHandlerSearch(controlSearchResults);
+    (0, _paginationViewJsDefault.default).addhandlerClick(controlPagination);
 };
 init();
 
@@ -1897,7 +1903,7 @@ const getSearchResultspage = function(page = state.search.page) {
     state.search.page = page;
     const start = (page - 1) * state.search.resultsPerPage; ///0;
     const end = page * state.search.resultsPerPage; ////9;
-    return state.search.results.slice(0, 9);
+    return state.search.results.slice(start, end);
 };
 
 },{"regenerator-runtime":"dXNgZ","./config":"k5Hzs","./helpers":"hGI1E","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dXNgZ":[function(require,module,exports) {
@@ -3043,12 +3049,48 @@ var _iconsSvg = require("url:../../img/icons.svg");
 var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
 class PaginationView extends (0, _viewDefault.default) {
     _parentElement = document.querySelector(".pagination");
+    addhandlerClick(handler) {
+        this._parentElement.addEventListener("click", function(e) {
+            const btn = e.target.closest(".btn--inline");
+            if (!btn) return;
+            console.log(btn);
+            const gotoPage = +btn.dataset.goto;
+            console.log(gotoPage);
+            handler(gotoPage);
+        });
+    }
     _generateMarkup() {
+        const curPage = this._data.page;
         const numPages = Math.ceil(this._data.results.length / this._data.resultsPerPage);
-        if (this._data.page === 1 && numPages > 1) return "page 1,others";
-        if (this._data.page === numPages && numPages > 1) return "last page";
-        if (this._data.page < numPages) return "other";
-        return "only 1 page";
+        if (curPage === 1 && numPages > 1) return `
+       <button data-goto="${curPage + 1}" class="btn--inline pagination__btn--next">
+            <span>Page ${curPage + 1}</span>
+            <svg class="search__icon">
+              <use href="${0, _iconsSvgDefault.default}#icon-arrow-right"></use>
+            </svg>
+          </button>`;
+        if (curPage === numPages && numPages > 1) return `
+       <button data-goto="${curPage - 1}" class="btn--inline pagination__btn--prev">
+            <svg class="search__icon">
+              <use href="${0, _iconsSvgDefault.default}#icon-arrow-left"></use>
+            </svg>
+            <span>Page ${curPage - 1}</span>
+          </button>`;
+        if (curPage < numPages) return `
+       <button data-goto="${curPage - 1}"class="btn--inline pagination__btn--prev">
+            <svg class="search__icon">
+              <use href="${0, _iconsSvgDefault.default}#icon-arrow-left"></use>
+            </svg>
+            <span>Page ${curPage - 1}</span>
+          </button>
+          <button data-goto="${curPage + 1}" class="btn--inline pagination__btn--next">
+            <span>Page ${curPage + 1}</span>
+            <svg class="search__icon">
+              <use href="${0, _iconsSvgDefault.default}#icon-arrow-right"></use>
+            </svg>
+          </button>
+      `;
+        return "";
     }
 }
 exports.default = new PaginationView();
