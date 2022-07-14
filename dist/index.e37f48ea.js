@@ -1919,7 +1919,6 @@ const updateServings = function(newServings) {
         ing.quantity = ing.quantity * newServings / state.recipe.servings;
     });
     state.recipe.servings = newServings;
-    console.log(state.recipe.servings);
 };
 
 },{"regenerator-runtime":"dXNgZ","./config":"k5Hzs","./helpers":"hGI1E","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dXNgZ":[function(require,module,exports) {
@@ -2573,11 +2572,10 @@ class RecipeView extends (0, _viewDefault.default) {
     }
     addHandlerUpdateServings(handler) {
         this._parentElement.addEventListener("click", function(e) {
-            const btn = e.target.closest(".btn--update-servings");
+            const btn = e.target.closest(".btn--tiny");
             if (!btn) return;
-            const updateTo = btn.dataset.updateTo;
-            console.log(updateTo);
-            handler(updateTo);
+            const updateTo = +btn.dataset.updateTo;
+            if (updateTo > 0) handler(updateTo);
         });
     }
     _generateMarkup() {
@@ -2605,12 +2603,12 @@ class RecipeView extends (0, _viewDefault.default) {
                       <span class="recipe__info-text">servings</span>
 
                       <div class="recipe__info-buttons">
-                        <button class="btn--tiny btn--update-servings" data-updateTo"${this._data.servings - 1}">
+                        <button class="btn--tiny btn--update-servings" data-update-to="${this._data.servings - 1}">
                           <svg>
                             <use href="${0, _iconsSvgDefault.default}#icon-minus-circle"></use>
                           </svg>
                         </button>
-                        <button class="btn--tiny btn--update-servings" data-updateTo"${this._data.servings + 1}">
+                        <button class="btn--tiny btn--update-servings" data-update-to="${this._data.servings + 1}">
                           <svg>
                             <use href="${0, _iconsSvgDefault.default}#icon-plus-circle"></use>
                           </svg>
