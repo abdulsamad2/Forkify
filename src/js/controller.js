@@ -45,13 +45,13 @@ const controlRecipes = async function () {
     ///////////rendring recipe ////////////////////////////////////
 
     recipeView.render(model.state.recipe);
+    // Testing
+
     // const recipeView = new recipeView(model.state.recipe);
   } catch (err) {
     recipeView.renderError();
   }
 };
-
-controlRecipes();
 
 // ['haschnage', 'load'].forEach(e => window.addEventListener(e, controlRecipes));
 
@@ -73,6 +73,8 @@ const controlSearchResults = async function () {
     // pagination
 
     paginationView.render(model.state.search);
+
+    // testing
   } catch (err) {
     console.log(err);
   }
@@ -86,8 +88,17 @@ const controlPagination = function (gotoPage) {
   paginationView.render(model.state.search);
 };
 
+const controlServings = function (newServings) {
+  //update the recipe servings (in the state)
+  model.updateServings(newServings);
+
+  //update the views as well then
+  recipeView.render(model.state.recipe);
+};
+
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
+  recipeView.addHandlerUpdateServings(controlServings);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addhandlerClick(controlPagination);
 };
