@@ -565,7 +565,9 @@ const controlRecipes = async function() {
         console.log(id);
         if (!id) return;
         /// loading spinner
+        //
         (0, _recipeViewJsDefault.default).renderSpinner();
+        (0, _resultViewJsDefault.default).update(_modelJs.getSearchResultspage());
         /////////////// loading recipie //////////////////
         await _modelJs.loadRecipe(id);
         //// const renderSpinner
@@ -2689,17 +2691,19 @@ class View {
     }
     update(data) {
         if (!data || Array.isArray(data) && data.length === 0) return this.renderError();
-        this._data = data;
+        this.data = data;
         const newMarkup = this._generateMarkup();
         const newDom = document.createRange().createContextualFragment(newMarkup);
         const newElements = Array.from(newDom.querySelectorAll("*"));
         const curElements = Array.from(this._parentElement.querySelectorAll("*"));
-        // console.log(curElements);
-        // console.log(newElements);
         newElements.forEach((newEl, i)=>{
             const curEl = curElements[i];
-            console.log(curEl, newEl.isEqualNode(curEl));
+            // changed text
             if (!newEl.isEqualNode(curEl) && newEl.firstChild.nodeValue.trim() !== "") curEl.textContent = newEl.textContent;
+            // updated changed attributes
+            if (!newEl.isEqualNode(curEl)) Array.from(newEl.attributes).forEach((attr)=>{
+                curEl.setAttribute(attr.name, attr.value);
+            });
         });
     }
     _clear() {
@@ -3062,8 +3066,9 @@ class ResultView extends (0, _viewDefault.default) {
         return this._data.map(this._generateMarkupPreview).join("");
     }
     _generateMarkupPreview(result) {
+        const id = window.location.hash.slice(1);
         return `<li class="preview">
-            <a class="preview__link " href="#${result.id}">
+            <a class="preview__link ${result.id === id ? "preview__link--active" : ""}" href="#${result.id}">
               <figure class="preview__fig">
                 <img src="${result.image}" alt="Test" />
               </figure>
