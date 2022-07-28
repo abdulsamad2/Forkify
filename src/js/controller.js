@@ -3,16 +3,15 @@ import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
 import resultView from './views/resultView.js';
 import paginationView from './views/paginationView.js';
-import BookmarkView from './views/bookmarksView.js';
 
+import recipeView from './views/recipeView.js';
+import bookmarksView from './views/bookmarksView.js';
 /// importing icons from
 
 import icons from 'url:../img/icons.svg';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import recipeView from './views/recipeView.js';
-import bookmarksView from './views/bookmarksView.js';
 
 if (model.hot) {
   model.hot.accept();
