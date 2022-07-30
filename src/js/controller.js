@@ -3,9 +3,9 @@ import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
 import resultView from './views/resultView.js';
 import paginationView from './views/paginationView.js';
-
 import recipeView from './views/recipeView.js';
 import bookmarksView from './views/bookmarksView.js';
+import addRecipeView from './views/addRecipeView.js';
 /// importing icons from
 
 import icons from 'url:../img/icons.svg';
@@ -50,7 +50,7 @@ const controlRecipes = async function () {
     recipeView.render(model.state.recipe);
     // Testing
     //updating bookmark view
-    debugger;
+
     bookmarksView.update(model.state.bookmarks);
     // const recipeView = new recipeView(model.state.recipe);
   } catch (err) {
@@ -121,6 +121,12 @@ controlBookmarks = function () {
   bookmarksView.render(model.state.bookmarks);
 };
 
+const controlAddRecipe = function (newRecipe) {
+  console.log(newRecipe);
+
+  // upload the new recipe data
+};
+
 const init = function () {
   bookmarksView.addhandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
@@ -128,5 +134,6 @@ const init = function () {
   recipeView.addHandlerAddBookmark(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addhandlerClick(controlPagination);
+  addRecipeView.addHandlerUpload(controlAddRecipe);
 };
 init();
