@@ -1887,6 +1887,7 @@ parcelHelpers.export(exports, "getSearchResultspage", ()=>getSearchResultspage);
 parcelHelpers.export(exports, "updateServings", ()=>updateServings);
 parcelHelpers.export(exports, "addBookmark", ()=>addBookmark);
 parcelHelpers.export(exports, "deleteBookmark", ()=>deleteBookmark);
+parcelHelpers.export(exports, "uploadRecipe", ()=>uploadRecipe);
 var _regeneratorRuntime = require("regenerator-runtime");
 var _config = require("./config");
 var _helpers = require("./helpers");
@@ -1976,7 +1977,17 @@ init();
 const clearBookmarks = function() {
     localStorage.clear("bookmarks");
 };
-clearBookmarks();
+const uploadRecipe = async function(newRecipe) {
+    const ingredients = Object.entries(newRecipe).filter((entry)=>entry[0].startsWith["ingredient"] && entry[1] !== "").map((ing)=>{
+        const [quantity, unit, description] = ing[1].replaceAll(" ", "").split(",");
+        return {
+            quantity,
+            unit,
+            description
+        };
+    });
+    console.log(ingredients);
+};
 
 },{"regenerator-runtime":"dXNgZ","./config":"k5Hzs","./helpers":"hGI1E","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dXNgZ":[function(require,module,exports) {
 /**
