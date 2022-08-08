@@ -1978,7 +1978,14 @@ const clearBookmarks = function() {
     localStorage.clear("bookmarks");
 };
 const uploadRecipe = async function(newRecipe) {
-    const ingredients = Object.entries(newRecipe).filter((entry)=>entry[0].endsWith(entry[1] !== ""));
+    const ingredients = Object.entries(newRecipe).filter((entry)=>entry[0].endsWith(entry[1] !== "").map((ing)=>{
+            const [quantity, unit, description] = ing[1].replaceAll(" ", "").split(",");
+            return {
+                quantity,
+                unit,
+                description
+            };
+        }));
     console.log(ingredients);
 };
 
