@@ -642,7 +642,7 @@ const init = function() {
 };
 init();
 
-},{"core-js/modules/es.array.includes.js":"dkJzX","core-js/modules/web.immediate.js":"49tUX","./model.js":"Y4A21","./views/recipeView.js":"l60JC","./views/searchView.js":"9OQAM","./views/resultView.js":"f70O5","url:../img/icons.svg":"loVOp","regenerator-runtime/runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./views/paginationView.js":"6z7bi","./views/bookmarksView.js":"4Lqzq","./views/addRecipeView.js":"i6DNj"}],"dkJzX":[function(require,module,exports) {
+},{"core-js/modules/es.array.includes.js":"dkJzX","core-js/modules/web.immediate.js":"49tUX","./model.js":"Y4A21","./views/recipeView.js":"l60JC","./views/searchView.js":"9OQAM","./views/resultView.js":"f70O5","./views/paginationView.js":"6z7bi","./views/bookmarksView.js":"4Lqzq","./views/addRecipeView.js":"i6DNj","url:../img/icons.svg":"loVOp","regenerator-runtime/runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dkJzX":[function(require,module,exports) {
 "use strict";
 var $ = require("../internals/export");
 var $includes = require("../internals/array-includes").includes;
@@ -1978,7 +1978,7 @@ const clearBookmarks = function() {
     localStorage.clear("bookmarks");
 };
 const uploadRecipe = async function(newRecipe) {
-    const ingredients = Object.entries(newRecipe).filter((entry)=>entry[0].endsWith(entry[1] !== "").map((ing)=>{
+    const ingredients = Object.entries(newRecipe).filter((entry)=>entry[0].startsWith(entry[1] !== "").map((ing)=>{
             const [quantity, unit, description] = ing[1].replaceAll(" ", "").split(",");
             return {
                 quantity,
@@ -3147,7 +3147,7 @@ class ResultView extends (0, _viewDefault.default) {
 }
 exports.default = new ResultView();
 
-},{"./View":"5cUXS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","url:../../img/icons.svg":"loVOp","./previewView":"1FDQ6"}],"1FDQ6":[function(require,module,exports) {
+},{"./View":"5cUXS","url:../../img/icons.svg":"loVOp","./previewView":"1FDQ6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1FDQ6":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _view = require("./View");
